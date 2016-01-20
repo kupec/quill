@@ -361,13 +361,10 @@ dom = _.extend(dom,
   EMBED_TEXT: '!' # No reason we picked ! besides it being one character (so delta cannot split it up)
 
   FONT_SIZES:
-    '10px': 1
-    '13px': 2
-    '16px': 3
-    '18px': 4
-    '24px': 5
-    '32px': 6
-    '48px': 7
+    '75%': 1
+    '100%': 2
+    '150%': 3
+    '250%': 4
 
   KEYS:
     BACKSPACE : 8
@@ -448,7 +445,7 @@ dom = _.extend(dom,
   }
 
   convertFontSize: (size) ->
-    if _.isString(size) and size.indexOf('px') > -1
+    if _.isString(size) and size.indexOf('%') > -1
       sources = Object.keys(dom.FONT_SIZES)
       targets = _.values(dom.FONT_SIZES)
     else

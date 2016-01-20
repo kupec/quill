@@ -8189,13 +8189,10 @@ dom = _.extend(dom, {
   DEFAULT_INLINE_TAG: 'SPAN',
   EMBED_TEXT: '!',
   FONT_SIZES: {
-    '10px': 1,
-    '13px': 2,
-    '16px': 3,
-    '18px': 4,
-    '24px': 5,
-    '32px': 6,
-    '48px': 7
+    '75%': 1,
+    '100%': 2,
+    '150%': 3,
+    '250%': 4
   },
   KEYS: {
     BACKSPACE: 8,
@@ -8277,7 +8274,7 @@ dom = _.extend(dom, {
   },
   convertFontSize: function(size) {
     var i, s, sources, targets;
-    if (_.isString(size) && size.indexOf('px') > -1) {
+    if (_.isString(size) && size.indexOf('%') > -1) {
       sources = Object.keys(dom.FONT_SIZES);
       targets = _.values(dom.FONT_SIZES);
     } else {
